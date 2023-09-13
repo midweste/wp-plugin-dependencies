@@ -1,0 +1,12 @@
+WordPress Plugin Dependencies
+
+Prevent WordPress activation or deactivation of plugins on the network and plugin page based on plugin meta Required:
+
+/**
+ * Plugin Name: MyPlugin
+ * Description: My great plugin
+ * Author: Me
+ * License: GPL2+
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
+ * Requires: akismet,woocommerce
+ */
