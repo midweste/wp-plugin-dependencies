@@ -2,12 +2,13 @@
 
 /*
  * Plugin Name:       WordPress Plugin Dependencies
- * Plugin URI:        https://github.com/midweste/wp-plugin-dependencies
+ * Plugin URI:        https://github.com/midweste/wp-plugins-dependencies
  * Description:       Prevent WordPress activation or deactivation of plugins based on plugin meta Required:
  * Author:            Midweste
- * Author URI:        https://github.com/midweste/wp-plugin-dependencies
+ * Author URI:        https://github.com/midweste/wp-plugins-dependencies
  * License:           GPL-2.0+
- * Update URI:        https://raw.githubusercontent.com/midweste/wp-plugin-dependencies/main/wp-plugin-dependencies.php
+ * Update URI:        https://api.github.com/repos/midweste/wp-plugins-dependencies/commits/main
+ * https://api.github.com/repos/midweste/wp-git-plugin-repository/commits/main
  */
 
 /**
@@ -63,6 +64,7 @@ class WordpressPlugins
         foreach ($standardPlugins as &$plugin) {
             $plugin['Type'] = 'all';
         }
+        // d($muPlugins, $standardPlugins, $dropinPlugins);
         return array_merge_recursive($dropinPlugins, $muPlugins, $standardPlugins);
     }
 
@@ -73,7 +75,7 @@ class WordpressPlugins
      */
     public function getPluginsAllExtended(): array
     {
-        static $plugins  = [];
+        static $plugins = [];
         if (!empty($plugins)) {
             return $plugins;
         }
@@ -130,7 +132,7 @@ class WordpressPlugins
      */
     protected function pluginRequiresMet(WordpressPlugin $plugin): array
     {
-        $requiresMet   = [];
+        $requiresMet = [];
         foreach ($plugin->getRequires() as $requireSlug) {
             $required = $this->getPluginBySlug($requireSlug);
             if (empty($required) || !$required->isActive()) {
