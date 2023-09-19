@@ -2,6 +2,7 @@
 
 /*
  * Plugin Name:       WordPress Plugin Dependencies
+ * Version: 2023.09.15.15.34.59
  * Plugin URI:        https://github.com/midweste/wp-plugins-dependencies
  * Description:       Prevent WordPress activation or deactivation of plugins based on plugin meta Required:
  * Author:            Midweste
